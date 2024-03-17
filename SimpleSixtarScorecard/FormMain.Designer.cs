@@ -27,21 +27,21 @@ partial class FormMain {
         label1 = new Label();
         button1 = new Button();
         dataGridView1 = new DataGridView();
-        label2 = new Label();
-        panel1 = new Panel();
-        textBox1 = new TextBox();
-        label3 = new Label();
         nameColumn = new DataGridViewTextBoxColumn();
         composerColumn = new DataGridViewTextBoxColumn();
         solarQuasarColumn = new DataGridViewTextBoxColumn();
         lunarQuasarColumn = new DataGridViewTextBoxColumn();
+        label2 = new Label();
+        panel1 = new Panel();
+        textBox1 = new TextBox();
+        label3 = new Label();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
         // label1
         // 
         label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        label1.Font = new Font("맑은 고딕", 12F);
+        label1.Font = new Font("Malgun Gothic", 12F);
         label1.Location = new Point(12, 12);
         label1.Name = "label1";
         label1.Size = new Size(604, 21);
@@ -51,11 +51,11 @@ partial class FormMain {
         // button1
         // 
         button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        button1.Location = new Point(622, 12);
+        button1.Location = new Point(657, 12);
         button1.Name = "button1";
-        button1.Size = new Size(150, 25);
+        button1.Size = new Size(115, 25);
         button1.TabIndex = 1;
-        button1.Text = "사용자 이름 바꾸기";
+        button1.Text = "Change Username";
         button1.UseVisualStyleBackColor = true;
         button1.Click += button1_Click;
         // 
@@ -76,6 +76,38 @@ partial class FormMain {
         dataGridView1.Size = new Size(760, 425);
         dataGridView1.TabIndex = 2;
         dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
+        // 
+        // nameColumn
+        // 
+        nameColumn.DataPropertyName = "Title";
+        nameColumn.HeaderText = "Title";
+        nameColumn.Name = "nameColumn";
+        nameColumn.ReadOnly = true;
+        nameColumn.Width = 235;
+        // 
+        // composerColumn
+        // 
+        composerColumn.DataPropertyName = "Composer";
+        composerColumn.HeaderText = "Composer";
+        composerColumn.Name = "composerColumn";
+        composerColumn.ReadOnly = true;
+        composerColumn.Width = 235;
+        // 
+        // solarQuasarColumn
+        // 
+        solarQuasarColumn.DataPropertyName = "SolarQuasar";
+        solarQuasarColumn.HeaderText = "Solar Quasar";
+        solarQuasarColumn.Name = "solarQuasarColumn";
+        solarQuasarColumn.ReadOnly = true;
+        solarQuasarColumn.Width = 135;
+        // 
+        // lunarQuasarColumn
+        // 
+        lunarQuasarColumn.DataPropertyName = "LunarQuasar";
+        lunarQuasarColumn.HeaderText = "Lunar Quasar";
+        lunarQuasarColumn.Name = "lunarQuasarColumn";
+        lunarQuasarColumn.ReadOnly = true;
+        lunarQuasarColumn.Width = 135;
         // 
         // label2
         // 
@@ -107,43 +139,11 @@ partial class FormMain {
         // 
         label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         label3.AutoSize = true;
-        label3.Location = new Point(401, 43);
+        label3.Location = new Point(390, 43);
         label3.Name = "label3";
-        label3.Size = new Size(34, 15);
+        label3.Size = new Size(45, 15);
         label3.TabIndex = 7;
-        label3.Text = "검색:";
-        // 
-        // nameColumn
-        // 
-        nameColumn.DataPropertyName = "Title";
-        nameColumn.HeaderText = "제목";
-        nameColumn.Name = "nameColumn";
-        nameColumn.ReadOnly = true;
-        nameColumn.Width = 235;
-        // 
-        // composerColumn
-        // 
-        composerColumn.DataPropertyName = "Composer";
-        composerColumn.HeaderText = "작곡가";
-        composerColumn.Name = "composerColumn";
-        composerColumn.ReadOnly = true;
-        composerColumn.Width = 235;
-        // 
-        // solarQuasarColumn
-        // 
-        solarQuasarColumn.DataPropertyName = "SolarQuasar";
-        solarQuasarColumn.HeaderText = "솔라 퀘이사 난이도";
-        solarQuasarColumn.Name = "solarQuasarColumn";
-        solarQuasarColumn.ReadOnly = true;
-        solarQuasarColumn.Width = 135;
-        // 
-        // lunarQuasarColumn
-        // 
-        lunarQuasarColumn.DataPropertyName = "LunarQuasar";
-        lunarQuasarColumn.HeaderText = "루나 퀘이사 난이도";
-        lunarQuasarColumn.Name = "lunarQuasarColumn";
-        lunarQuasarColumn.ReadOnly = true;
-        lunarQuasarColumn.Width = 135;
+        label3.Text = "Search:";
         // 
         // FormMain
         // 

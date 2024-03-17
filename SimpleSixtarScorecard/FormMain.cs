@@ -5,21 +5,21 @@ public partial class FormMain : Form {
 
     public FormMain() {
         InitializeComponent();
-        label1.Text = Profile.Instance.UserName + " ´Ô";
+        label1.Text = Profile.Instance.UserName;
 
-        // °î µ¥ÀÌÅÍ °¡Á®¿À±â
+        // Import song data
         dataGridView1.AutoGenerateColumns = false;
         dataGridView1.DataSource = songs;
-        label2.Text = "ÃÑ " + songs.Length.ToString() + "°î";
+        label2.Text = songs.Length.ToString() + " songs";
     }
 
     private void button1_Click(object sender, EventArgs e) {
-        // »ç¿ëÀÚ ÀÌ¸§ ¹Ù²Ù±â
+        // Change username
         using ProfileNameDialog dialog = new(false);
 
         if (dialog.ShowDialog() == DialogResult.OK) {
             Profile.Instance.UserName = dialog.UserName.Trim();
-            label1.Text = Profile.Instance.UserName + " ´Ô";
+            label1.Text = Profile.Instance.UserName;
         }
     }
 
@@ -27,10 +27,10 @@ public partial class FormMain : Form {
         int index;
 
         try {
-            // ¼±ÅÃµÈ °î ÀÎµ¦½º
+            // Selected song index
             index = dataGridView1.SelectedRows[0].Index;
         } catch (ArgumentOutOfRangeException) {
-            // ¼±ÅÃµÈ °îÀÌ ¾øÀ¸¸é ºñÈ°¼ºÈ­
+            // Disable if no song is selected
             panel1.Visible = false;
             return;
         }
@@ -45,11 +45,11 @@ public partial class FormMain : Form {
 
     private void textBox1_TextChanged(object sender, EventArgs e) {
         songs = !string.IsNullOrWhiteSpace(textBox1.Text)
-           // ¹®ÀÚ¿­ °Ë»ö
+           // String search
            ? Song.SongList.Where(song => song.Title.Contains(textBox1.Text.Trim(), StringComparison.OrdinalIgnoreCase) || song.Composer.Contains(textBox1.Text.Trim(), StringComparison.OrdinalIgnoreCase)).ToArray()
            : Song.SongList;
 
         dataGridView1.DataSource = songs;
-        label2.Text = "ÃÑ " + songs.Length.ToString() + "°î";
+        label2.Text = songs.Length.ToString() + " songs";
     }
 }
